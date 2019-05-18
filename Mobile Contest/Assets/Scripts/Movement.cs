@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveMent : MonoBehaviour
+public class Movement : MonoBehaviour
 {
+    public float speed = 100;
     // Start is called before the first frame update
     void Start()
     {
         
     }
-
     // Update is called once per frame
     void Update()
     {
-        CharacterController ch;
-        Vector2 xyz = new Vector2();
-
-        if (Input.GetKey(KeyCode.A))
-            ch.Move(xyz);
+        if (Input.GetKey(KeyCode.LeftArrow))
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+        else if (Input.GetKey(KeyCode.RightArrow))
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            
     }
 }
