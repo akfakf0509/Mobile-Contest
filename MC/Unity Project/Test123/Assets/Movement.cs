@@ -24,6 +24,7 @@ public class Movement : MonoBehaviour
             moveVelocity = transform.right;
         else if (Input.GetAxisRaw("Horizontal") < 0)
             moveVelocity = new Vector3(-1, 0, 0);
+//            transform.Translate(-1, 0, 0);
 
         transform.position += moveVelocity * speed * Time.deltaTime;
     }
