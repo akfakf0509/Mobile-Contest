@@ -19,7 +19,7 @@ public class BasicSkill : MonoBehaviour
     IEnumerator destorykill()
     {
         yield return new WaitForSeconds(3);
-        Destroy(GameObject.Find("skill1"));
+        Destroy(gameObject);
     }
     void OnTriggerEnter2D(Collider2D coll)
     {
