@@ -8,11 +8,15 @@ public class StartGame : MonoBehaviour
     private void Update()
     {
  //       if (Input.touchCount > 0)
-        if (Input.GetMouseButtonDown(0))
+       if (Input.GetMouseButtonDown(0))
             SceneManager.LoadScene("GameScene");
     }
-    public void ChangeGameScene()
+    /*public void ChangeGameScene()
     {
-        SceneManager.LoadScene("GameScene");
-    }
+        SceneManager.LoadScene("OptionScene");
+    }*/
+ /*   public void OnPointerClick(PointerEventData eventData)
+    {
+        
+    }*/
 }
