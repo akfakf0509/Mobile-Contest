@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
+    public GameObject player;
     public GameObject positon;
     private int mode = 0;
     // Start is called before the first frame update
@@ -18,15 +19,16 @@ public class Arrow : MonoBehaviour
         switch (mode)
         {
             case 0:
-                transform.RotateAround(positon.transform.position, Vector3.forward * Time.deltaTime, 1);
+                transform.RotateAround(positon.transform.position, Vector3.forward * Time.deltaTime, 2);
                 if (transform.rotation.z * 100 > 60)
                     mode++;
                 break;
             case 1:
-                transform.RotateAround(positon.transform.position, Vector3.back * Time.deltaTime, 1);
+                transform.RotateAround(positon.transform.position, Vector3.back * Time.deltaTime, 2);
                 if (transform.rotation.z * 100 < -60)
                     mode = 0;
                 break;
         }
+        transform.position = new Vector2(player.transform.position.x, transform.position.y);
     }
 }
