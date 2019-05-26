@@ -10,25 +10,27 @@ public class Arrow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch (mode)
+        if (!GameObject.Find("SkillManager").GetComponent<SkillManager>().doing)
         {
-            case 0:
-                transform.RotateAround(positon.transform.position, Vector3.forward * Time.deltaTime, 2);
-                if (transform.rotation.z * 100 > 60)
-                    mode++;
-                break;
-            case 1:
-                transform.RotateAround(positon.transform.position, Vector3.back * Time.deltaTime, 2);
-                if (transform.rotation.z * 100 < -60)
-                    mode = 0;
-                break;
+            switch (mode)
+            {
+                case 0:
+                    transform.RotateAround(positon.transform.position, Vector3.forward * Time.deltaTime, 2);
+                    if (transform.rotation.z * 100 > 60)
+                        mode++;
+                    break;
+                case 1:
+                    transform.RotateAround(positon.transform.position, Vector3.back * Time.deltaTime, 2);
+                    if (transform.rotation.z * 100 < -60)
+                        mode = 0;
+                    break;
+            }
         }
-        transform.position = new Vector2(player.transform.position.x, transform.position.y);
     }
 }

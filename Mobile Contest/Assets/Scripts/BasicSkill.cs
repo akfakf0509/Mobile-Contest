@@ -8,7 +8,7 @@ public class BasicSkill : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("destorykill");
+        StartCoroutine("destorySkill");
     }
 
     // Update is called once per frame
@@ -16,14 +16,14 @@ public class BasicSkill : MonoBehaviour
     {
         transform.Translate(Vector2.up * skill_speed * Time.deltaTime);
     }
-    IEnumerator destorykill()
+    IEnumerator destorySkill()
     {
         yield return new WaitForSeconds(3);
         Destroy(gameObject);
     }
     void OnTriggerEnter2D(Collider2D coll)
     {
-        coll.gameObject.transform.GetChild(1).GetComponent<HealthManager>().health -= 10;
+        coll.gameObject.transform.GetChild(0).GetComponent<HealthManager>().health -= 10;
         Destroy(gameObject);
     }
 }

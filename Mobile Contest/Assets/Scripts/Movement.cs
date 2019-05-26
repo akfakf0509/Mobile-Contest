@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
 
     void Awake()
     {
-        animator = gameObject.GetComponent<Animator>();
+        animator = transform.GetChild(0).gameObject.GetComponent<Animator>();
     }
     // Start is called before the first frame update
     void Start()
@@ -24,13 +24,13 @@ public class Movement : MonoBehaviour
         {
             animator.SetBool("is_walk", true);
             transform.Translate(Vector2.left * speed * Time.deltaTime);
-            transform.localScale = new Vector2(1.5f, 1.5f);
+            transform.GetChild(0).transform.localScale = new Vector2(1.5f, 1.5f);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             animator.SetBool("is_walk", true);
             transform.Translate(Vector2.right * speed * Time.deltaTime);
-            transform.localScale = new Vector2(-1.5f, 1.5f);
+            transform.GetChild(0).transform.localScale = new Vector2(-1.5f, 1.5f);
 
         }
         else
