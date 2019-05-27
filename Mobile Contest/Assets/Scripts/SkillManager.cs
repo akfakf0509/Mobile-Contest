@@ -19,7 +19,7 @@ public class SkillManager : MonoBehaviour
     private float avo_cooltime = 5f;
     private float ultimate_cooltime = 25f;
 
-    // Update is called once per frame
+    // Update is called once per frame 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q) && basicCooltime)
@@ -43,6 +43,8 @@ public class SkillManager : MonoBehaviour
             basicCooltime = false;
             StartCoroutine("UltimateCooltime");
         }
+        if (doing)
+            StartCoroutine("turnDoing");
     }
 
     IEnumerator BasicCooltime()
@@ -60,5 +62,10 @@ public class SkillManager : MonoBehaviour
     {
         yield return new WaitForSeconds(ultimate_cooltime);
         ultimateCooltime = true;
+    }
+    IEnumerator turnDoing()
+    {
+        yield return new WaitForSeconds(0.1f);
+        doing = false;
     }
 }
