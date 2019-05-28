@@ -9,7 +9,7 @@ public class StartGame : MonoBehaviour
     {
  //       if (Input.touchCount > 0)
        if (Input.GetMouseButtonDown(0))
-            SceneManager.LoadScene("GameScene");
+            SceneManager.LoadScene("StageScene");
     }
     /*public void ChangeGameScene()
     {
