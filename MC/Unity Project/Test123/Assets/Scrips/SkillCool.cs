@@ -7,10 +7,10 @@ using UnityEngine.EventSystems;
 public class SkillCool : MonoBehaviour
 {
     public GameObject player;
-    public Image img_Skill1;
+    public Image img_Skill;
     public Text SkillTxt;
+    public float Skill_Cool;
 
-    public float Skill_Cool = 2f;
     private bool isCan = true;
 
     // Start is called before the first frame update
@@ -39,7 +39,7 @@ public class SkillCool : MonoBehaviour
         while (cool >= 0.0f)
         {
             cool -= Time.deltaTime;
-            img_Skill1.fillAmount = (Skill_Cool-cool)/Skill_Cool;
+            img_Skill.fillAmount = (Skill_Cool-cool)/Skill_Cool;
             SkillTxt.text = "" + Mathf.Round(cool*10)/10;
             yield return new WaitForFixedUpdate();
         }
