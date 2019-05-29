@@ -24,27 +24,42 @@ public class SkillManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q) && basicCooltime)
         {
-            doing = true;
-            Instantiate(basic_skill, position.transform.position, position.transform.rotation);
-            basicCooltime = false;
-            StartCoroutine("BasicCooltime");
+            Use_basic();
         }
         if (Input.GetKeyDown(KeyCode.W) && avoCooltime)
         {
-            doing = true;
-            Instantiate(avo_skill, position.transform.position, position.transform.rotation);
-            avoCooltime = false;
-            StartCoroutine("AvoCooltime");
+            Use_avo();
         }
         if (Input.GetKeyDown(KeyCode.E) && ultimateCooltime)
         {
-            doing = true;
-            Instantiate(Ultimate_skill, position.transform.position, position.transform.rotation);
-            basicCooltime = false;
-            StartCoroutine("UltimateCooltime");
+            Use_ultimate();
         }
         if (doing)
             StartCoroutine("turnDoing");
+    }
+
+    public void Use_basic()
+    {
+        doing = true;
+        Instantiate(basic_skill, position.transform.position, position.transform.rotation);
+        basicCooltime = false;
+        StartCoroutine("BasicCooltime");
+    }
+
+    public void Use_avo()
+    {
+        doing = true;
+        Instantiate(avo_skill, position.transform.position, position.transform.rotation);
+        avoCooltime = false;
+        StartCoroutine("AvoCooltime");
+    }
+
+    public void Use_ultimate()
+    {
+        doing = true;
+        Instantiate(Ultimate_skill, position.transform.position, position.transform.rotation);
+        basicCooltime = false;
+        StartCoroutine("UltimateCooltime");
     }
 
     IEnumerator BasicCooltime()
