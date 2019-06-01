@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class JoyStick : MonoBehaviour
 {
-    public Transform Player;       // 플레이어.
+    public GameObject Player;       // 플레이어.
     public Transform Stick;        // 조이스틱.
     public float speed = 10f;      // 플레이어 속도.
 
@@ -27,14 +27,24 @@ public class JoyStick : MonoBehaviour
         MoveFlag = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
+ //       float f = JoyVec.x;
         if (MoveFlag)
         {
+            if (JoyVec.x < 0)
+            {
+                Player.transform.localScale = new Vector3(0.2f, 0.2f, 1);
+            }
+            else
+            {
+                Player.transform.localScale = new Vector3(-0.2f, 0.2f, 1);
+            }
             PlayerVec = new Vector2(JoyVec.x, 0);
             Player.transform.Translate(PlayerVec * Time.deltaTime * speed);
         }
+ //       f = Mathf.Abs(f);
+ //       anim.SetFloat("Move", f);
     }
 
     public void Drag(BaseEventData _Data)
