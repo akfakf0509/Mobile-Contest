@@ -5,15 +5,21 @@ using UnityEngine.EventSystems;
 
 public class JoyStick : MonoBehaviour
 {
+    Animator animator;
     public GameObject Player;       // 플레이어.
     public Transform Stick;        // 조이스틱.
-    public float speed = 10f;      // 플레이어 속도.
+    public float speed = 5f;      // 플레이어 속도.
 
     private Vector2 StickFirstPos; // 조이스틱의 처음 위치.
     private Vector2 JoyVec;        // 조이스틱의 벡터 (방향)
     private Vector2 PlayerVec;     // 플레이어의 벡터 (방향)
     private float Radius;          // 조이스틱 배경의 반지름.
     private bool MoveFlag;         // 플레이어 움직임 스위치.
+
+    void Awake()
+    {
+        animator = Player.GetComponent<Animator>();
+    }
 
     void Start()
     {
@@ -29,12 +35,12 @@ public class JoyStick : MonoBehaviour
 
     void Update()
     {
- //       float f = JoyVec.x;
         if (MoveFlag)
         {
             if (JoyVec.x < 0)
             {
                 Player.transform.localScale = new Vector3(0.2f, 0.2f, 1);
+                animator.SetBool("Move", true);
             }
             else
             {
@@ -42,9 +48,10 @@ public class JoyStick : MonoBehaviour
             }
             PlayerVec = new Vector2(JoyVec.x, 0);
             Player.transform.Translate(PlayerVec * Time.deltaTime * speed);
+            
         }
- //       f = Mathf.Abs(f);
- //       anim.SetFloat("Move", f);
+        else
+            animator.SetBool("Move", false);
     }
 
     public void Drag(BaseEventData _Data)

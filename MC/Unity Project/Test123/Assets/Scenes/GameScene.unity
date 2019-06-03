@@ -1763,7 +1763,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 615364376}
   Stick: {fileID: 2087077572}
-  speed: 10
+  speed: 5
 --- !u!1 &1057899324
 GameObject:
   m_ObjectHideFlags: 0
