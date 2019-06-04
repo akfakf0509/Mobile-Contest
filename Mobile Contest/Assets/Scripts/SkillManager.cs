@@ -35,7 +35,7 @@ public class SkillManager : MonoBehaviour
             Use_ultimate();
         }
         if (doing)
-            StartCoroutine("turnDoing");
+            StartCoroutine("TurnDoing");
     }
 
     public void Use_basic()
@@ -78,7 +78,7 @@ public class SkillManager : MonoBehaviour
         yield return new WaitForSeconds(ultimate_cooltime);
         ultimateCooltime = true;
     }
-    IEnumerator turnDoing()
+    IEnumerator TurnDoing()
     {
         yield return new WaitForSeconds(0.1f);
         doing = false;
