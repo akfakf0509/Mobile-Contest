@@ -35,20 +35,24 @@ public class JoyStick : MonoBehaviour
 
     void Update()
     {
+        Vector3 moveVelocity = new Vector3();
         if (MoveFlag)
         {
             if (JoyVec.x < 0)
             {
                 Player.transform.localScale = new Vector3(0.2f, 0.2f, 1);
                 animator.SetBool("Move", true);
+                moveVelocity = Vector3.left;
             }
             else
             {
                 Player.transform.localScale = new Vector3(-0.2f, 0.2f, 1);
+                animator.SetBool("Move", true);
+                moveVelocity = Vector3.right;
             }
-            PlayerVec = new Vector2(JoyVec.x, 0);
-            Player.transform.Translate(PlayerVec * Time.deltaTime * speed);
-            
+            //            PlayerVec = new Vector2(JoyVec.x, 0);
+            //            Player.transform.Translate(PlayerVec * Time.deltaTime * speed);
+            Player.transform.position += moveVelocity * speed * Time.deltaTime;
         }
         else
             animator.SetBool("Move", false);
