@@ -11,6 +11,10 @@ public class StartGame : MonoBehaviour
        if (Input.GetMouseButtonDown(0))
             SceneManager.LoadScene("StageScene");
     }
+    public void onClick()
+    {
+        SceneManager.LoadScene("GameScene");
+    }
     /*public void ChangeGameScene()
     {
         SceneManager.LoadScene("OptionScene");
