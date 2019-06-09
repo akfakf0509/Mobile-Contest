@@ -15,9 +15,9 @@ public class SkillManager : MonoBehaviour
     private bool avoCooltime = true;
     private bool ultimateCooltime = true;
 
-    private float basic_cooltime = 2f;
-    private float avo_cooltime = 5f;
-    private float ultimate_cooltime = 25f;
+    private readonly float basic_cooltime = 2f;
+    private readonly float avo_cooltime = 5f;
+    private readonly float ultimate_cooltime = 25f;
 
     // Update is called once per frame 
     void Update()
@@ -58,7 +58,7 @@ public class SkillManager : MonoBehaviour
     {
         doing = true;
         Instantiate(Ultimate_skill, position.transform.position, position.transform.rotation);
-        basicCooltime = false;
+        ultimateCooltime = false;
         StartCoroutine("UltimateCooltime");
     }
 

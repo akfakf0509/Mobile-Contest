@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+    public GameObject basic_skill;
     Animator animator;
     private Vector3 target = new Vector3(0, 0, 0);
 
     private short mode = 0;
-    private float speed = 70f;
+    public float speed = 70f;
+    private bool basic_skill_cooltime = false;
 
     void Awake()
     {
@@ -28,6 +30,23 @@ public class EnemyAI : MonoBehaviour
         else if(mode == 1)
         {
             Ai_movement();
+        }
+        if (transform.GetChild(0).GetChild(0).GetComponent<HealthManager>().health <= 0)
+        {
+            //죽으면
+        }
+        //이동
+
+        if (!basic_skill_cooltime)
+        {
+            GameObject skill = Instantiate(basic_skill);
+            skill.transform.position = transform.Find("Enemy_Arrow/Arrow_position").transform.position;
+            skill.transform.rotation = Quaternion.Euler(new Vector3(0,0,180));
+            skill.transform.Rotate(new Vector3(0, 0, Random.Range(-20, 20)));
+            mode = 0;
+            basic_skill_cooltime = true;
+            StartCoroutine("Skill_delay");
+            StartCoroutine("Skill_cooltime");
         }
     }
 
@@ -51,7 +70,17 @@ public class EnemyAI : MonoBehaviour
 
     IEnumerator Wait_for()
     {
-        yield return new WaitForSeconds(Random.Range(0f, 2f));
+        yield return new WaitForSeconds(Random.Range(0f, 3f));
         mode = 1;
+    }
+    IEnumerator Skill_delay()
+    {
+        yield return new WaitForSeconds(0.1f);
+        mode = 1;
+    }
+    IEnumerator Skill_cooltime()
+    {
+        yield return new WaitForSeconds(Random.Range(2f, 2f));
+        basic_skill_cooltime = false;
     }
 }

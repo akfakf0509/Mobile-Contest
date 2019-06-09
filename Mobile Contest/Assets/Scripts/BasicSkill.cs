@@ -8,18 +8,13 @@ public class BasicSkill : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("destorySkill");
+        Destroy(gameObject, 3f);
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector2.up * skill_speed * Time.deltaTime);
-    }
-    IEnumerator destorySkill()
-    {
-        yield return new WaitForSeconds(3);
-        Destroy(gameObject);
     }
     void OnTriggerEnter2D(Collider2D coll)
     {
