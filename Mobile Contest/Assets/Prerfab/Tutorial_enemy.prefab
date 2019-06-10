@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 950610656670870852}
   - component: {fileID: 950610656670870855}
   m_Layer: 5
-  m_Name: Health
+  m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,15 +29,15 @@ RectTransform:
   m_GameObject: {fileID: 950610656670870857}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 1, z: 1}
+  m_LocalScale: {x: 0.15, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 950610657173119643}
-  m_Father: {fileID: 950610658399687042}
-  m_RootOrder: 0
+  m_Father: {fileID: 950610656815721747}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 10}
+  m_AnchoredPosition: {x: 0, y: 35}
   m_SizeDelta: {x: 460, y: 259}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &950610656670870850
@@ -144,6 +144,7 @@ Transform:
   m_Children:
   - {fileID: 950610658399687042}
   - {fileID: 950610658041638824}
+  - {fileID: 950610656670870854}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -159,8 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45d066c03dedb54d8b2871dbb71ac32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 950610656815721749}
-  position: {fileID: 0}
+  basic_skill: {fileID: 0}
+  speed: 70
 --- !u!1 &950610656992080491
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,8 +622,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 20, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
-  m_Children:
-  - {fileID: 950610656670870854}
+  m_Children: []
   m_Father: {fileID: 950610656815721747}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -565,8 +565,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -25, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
-  m_Children:
-  - {fileID: 1160706724}
+  m_Children: []
   m_Father: {fileID: 1571985068}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -765,7 +764,7 @@ GameObject:
   - component: {fileID: 1160706721}
   - component: {fileID: 1160706725}
   m_Layer: 5
-  m_Name: Health
+  m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -840,15 +839,15 @@ RectTransform:
   m_GameObject: {fileID: 1160706720}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 1, z: 1}
+  m_LocalScale: {x: 0.15, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 146966123}
-  m_Father: {fileID: 783262700}
-  m_RootOrder: 0
+  m_Father: {fileID: 1571985068}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 10}
+  m_AnchoredPosition: {x: 0, y: -10}
   m_SizeDelta: {x: 460, y: 259}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1160706725
@@ -1087,6 +1086,7 @@ Transform:
   m_Children:
   - {fileID: 783262700}
   - {fileID: 1969212537}
+  - {fileID: 1160706724}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1310,6 +1310,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 950610656670870857, guid: bb9f6ca0e9349a24fb6ec9e83af68b36,
+        type: 3}
+      propertyPath: m_Name
+      value: HealthBar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb9f6ca0e9349a24fb6ec9e83af68b36, type: 3}

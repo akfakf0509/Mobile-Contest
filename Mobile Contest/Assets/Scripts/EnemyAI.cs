@@ -31,18 +31,20 @@ public class EnemyAI : MonoBehaviour
         {
             Ai_movement();
         }
-        if (transform.GetChild(0).GetChild(0).GetComponent<HealthManager>().health <= 0)
+        if (transform.Find("HealthBar").GetComponent<HealthManager>().health <= 0)
         {
             //죽으면
         }
         //이동
 
-        if (!basic_skill_cooltime)
+        if (!basic_skill_cooltime)  
         {
             GameObject skill = Instantiate(basic_skill);
+            Vector3 dir = transform.position - skill.transform.position;
             skill.transform.position = transform.Find("Enemy_Arrow/Arrow_position").transform.position;
-            skill.transform.rotation = Quaternion.Euler(new Vector3(0,0,180));
-            skill.transform.Rotate(new Vector3(0, 0, Random.Range(-20, 20)));
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            skill.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            //skill.transform.Rotate(new Vector3(0, 0, Random.Range(-20, 20)));
             mode = 0;
             basic_skill_cooltime = true;
             StartCoroutine("Skill_delay");

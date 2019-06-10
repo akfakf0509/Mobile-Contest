@@ -18,7 +18,7 @@ public class BasicSkill : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D coll)
     {
-        coll.gameObject.transform.GetChild(0).GetComponent<HealthManager>().health -= 10;
+        coll.gameObject.transform.parent.Find("HealthBar").GetComponent<HealthManager>().health -= 10;
         Destroy(gameObject);
     }
 }

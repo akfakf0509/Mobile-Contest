@@ -32,8 +32,7 @@ public class Movement : MonoBehaviour
             {
                 animator.SetBool("is_walk", true);
                 transform.Translate(Vector2.right * speed * Time.deltaTime);
-                transform.GetChild(0).transform.localScale = new Vector2(-1.5f, 1.5f);
-
+                transform.GetChild(0).localScale = new Vector2(-1.5f, 1.5f);
             }
             else
                 animator.SetBool("is_walk", false);
