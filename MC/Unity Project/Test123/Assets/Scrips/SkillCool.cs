@@ -31,7 +31,16 @@ public class SkillCool : MonoBehaviour
         {
             StartCoroutine(CoolTime(this.Skill_Cool));
         }
+
+        /*img_Skill.transform.localScale = new Vector3(1, 1, 1);
+        StartCoroutine(waitfor(0.1f));
+        img_Skill.transform.localScale = new Vector3(0.8f, 0.8f, 1);*/
     }
+
+    /*IEnumerator waitfor(float wait)
+    {
+        yield return new WaitForSeconds(wait);
+    }*/
 
     IEnumerator CoolTime(float cool)
     {

@@ -10,15 +10,14 @@ public class StageManager : MonoBehaviour
     public GameObject Stage4;
     public GameObject Stage5;
 
-    public int count;
+    static int count;
 
-    // Start is called before the first frame update
     void Start()
     {
         count = 1;
     }
 
-    // Update is called once per frame
+
     void FixedUpdate()
     {
         switch (count)
@@ -50,9 +49,15 @@ public class StageManager : MonoBehaviour
         if (count < 5)
             count++;
     }
+
     public void onClick_pre()
     {
         if (count > 1)
             count--;
+    }
+
+    public void stage_Selected()
+    {
+
     }
 }

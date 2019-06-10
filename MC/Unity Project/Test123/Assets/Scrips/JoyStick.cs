@@ -40,13 +40,13 @@ public class JoyStick : MonoBehaviour
         {
             if (JoyVec.x < 0)
             {
-                Player.transform.localScale = new Vector3(0.2f, 0.2f, 1);
+                Player.transform.localScale = new Vector3(0.22f, 0.22f, 1);
                 animator.SetBool("Move", true);
                 moveVelocity = Vector3.left;
             }
             else
             {
-                Player.transform.localScale = new Vector3(-0.2f, 0.2f, 1);
+                Player.transform.localScale = new Vector3(-0.22f, 0.22f, 1);
                 animator.SetBool("Move", true);
                 moveVelocity = Vector3.right;
             }
