@@ -56,8 +56,8 @@ public class StageManager : MonoBehaviour
             count--;
     }
 
-    public void stage_Selected()
-    {
+ //   public void stage_Selected()
+ //   {
 
-    }
+ //   }
 }

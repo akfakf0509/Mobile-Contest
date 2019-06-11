@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Stage_S : MonoBehaviour
 {
-    int StageNum = 1;
-
     void Start()
     {
 //        StageNum = GetComponent<StageManager>.count;

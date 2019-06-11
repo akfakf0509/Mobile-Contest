@@ -9,7 +9,15 @@ public class PanelButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PauseWindow.SetActive(false);
+        //PauseWindow.SetActive(true);
+        //StartCoroutine(WaitFor(2f));
+        //Invoke("appear", 2);
+        //PauseWindow.SetActive(false);
+    }
+
+    IEnumerator WaitFor(float time)
+    {
+        yield return new WaitForSeconds(time);
     }
 
     public void OpenClick()
