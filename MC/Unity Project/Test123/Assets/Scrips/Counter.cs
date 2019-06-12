@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Counter : MonoBehaviour
 {
-    public int Stage_count;
+    public static int Stage_count;
 }

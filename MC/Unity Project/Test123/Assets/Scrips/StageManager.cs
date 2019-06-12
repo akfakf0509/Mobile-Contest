@@ -13,13 +13,13 @@ public class StageManager : Counter
 
     void Start()
     {
-        Stage_count = 1;
+        Counter.Stage_count = 1;
     }
 
 
     void FixedUpdate()
     {
-        switch (Stage_count)
+        switch (Counter.Stage_count)
         {
             case 1:
                 Vanish(); Stage1.SetActive(true); break;
@@ -45,14 +45,14 @@ public class StageManager : Counter
 
     public void onClick_next()
     {
-        if (Stage_count < 5)
-            Stage_count++;
+        if (Counter.Stage_count < 5)
+            Counter.Stage_count++;
     }
 
     public void onClick_pre()
     {
-        if (Stage_count > 1)
-            Stage_count--;
+        if (Counter.Stage_count > 1)
+            Counter.Stage_count--;
     }
 
     public void stage_Selected()

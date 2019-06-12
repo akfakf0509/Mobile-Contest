@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class PanelButton : MonoBehaviour
+public class PanelButton : Counter
 {
     public GameObject PauseWindow;
+    public Text text1;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,8 @@ public class PanelButton : MonoBehaviour
         //StartCoroutine(WaitFor(2f));
         //Invoke("appear", 2);
         //PauseWindow.SetActive(false);
+
+        Debug.Log(Counter.Stage_count);
     }
 
     IEnumerator WaitFor(float time)
@@ -34,7 +38,7 @@ public class PanelButton : MonoBehaviour
 
     public void HomeClick()
     {
-        SceneManager.LoadScene("StageScene");
         Time.timeScale = 0;
+        SceneManager.LoadScene("StageScene");
     }
 }
