@@ -10,11 +10,12 @@ public class EnemyAI : MonoBehaviour
 
     private short mode = 0;
     public float speed = 70f;
-    private bool basic_skill_cooltime = false;
+    private bool basic_skill_cooltime = true;
 
     void Awake()
     {
-        animator = transform.GetChild(0).gameObject.GetComponent<Animator>();    
+        animator = transform.GetChild(0).gameObject.GetComponent<Animator>();
+        StartCoroutine("Skill_cooltime");
     }
 
     void Update()
