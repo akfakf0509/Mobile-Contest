@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stage_S : MonoBehaviour
+public class Stage_S : Counter
 {
     void Start()
     {
 //        StageNum = GetComponent<StageManager>.count;
 //        var StageNum = GameObject.Find("count").GetComponent<StageManager>();
     }
-    
-    void Update()
-    {
 
-    }
+    //public void Stage_Selected()
+    //{
+        
+    //}
 }

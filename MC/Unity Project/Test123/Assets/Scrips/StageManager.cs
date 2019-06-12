@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class StageManager : MonoBehaviour
+public class StageManager : Counter
 {
     public GameObject Stage1;
     public GameObject Stage2;
@@ -10,17 +11,15 @@ public class StageManager : MonoBehaviour
     public GameObject Stage4;
     public GameObject Stage5;
 
-    static int count;
-
     void Start()
     {
-        count = 1;
+        Stage_count = 1;
     }
 
 
     void FixedUpdate()
     {
-        switch (count)
+        switch (Stage_count)
         {
             case 1:
                 Vanish(); Stage1.SetActive(true); break;
@@ -46,18 +45,18 @@ public class StageManager : MonoBehaviour
 
     public void onClick_next()
     {
-        if (count < 5)
-            count++;
+        if (Stage_count < 5)
+            Stage_count++;
     }
 
     public void onClick_pre()
     {
-        if (count > 1)
-            count--;
+        if (Stage_count > 1)
+            Stage_count--;
     }
 
- //   public void stage_Selected()
- //   {
-
- //   }
+    public void stage_Selected()
+    {
+        SceneManager.LoadScene("GameScene");
+    }
 }
