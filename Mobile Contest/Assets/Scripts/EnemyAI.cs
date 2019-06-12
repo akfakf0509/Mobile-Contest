@@ -40,11 +40,10 @@ public class EnemyAI : MonoBehaviour
         if (!basic_skill_cooltime)  
         {
             GameObject skill = Instantiate(basic_skill);
-            Vector3 dir = transform.position - skill.transform.position;
+            GameObject player = GameObject.Find("Player_object/Player");
             skill.transform.position = transform.Find("Enemy_Arrow/Arrow_position").transform.position;
-            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            skill.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            //skill.transform.Rotate(new Vector3(0, 0, Random.Range(-20, 20)));
+            skill.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(player.transform.position.y - skill.transform.position.y, player.transform.position.x - skill.transform.position.x) * 180f / Mathf.PI);
+            skill.transform.Rotate(new Vector3(0, 0, -90 + Random.Range(-20, 20)));
             mode = 0;
             basic_skill_cooltime = true;
             StartCoroutine("Skill_delay");
