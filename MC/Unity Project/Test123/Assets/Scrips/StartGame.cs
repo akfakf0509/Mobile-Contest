@@ -7,7 +7,16 @@ public class StartGame : MonoBehaviour
 {
     private void Update()
     {
- //       if (Input.touchCount > 0)
+        //if (Application.platform == RuntimePlatform.Android)
+        //{
+        //    Vector3 tpos = Input.GetTouch(0).position;
+
+        //    if (tpos.x <= Screen.width / 2)
+        //    {
+        //        SceneManager.LoadScene("StageScene");
+        //    }
+        //}
+ //      if (Input.touchCount > 0)
        if (Input.GetMouseButtonDown(0))
             SceneManager.LoadScene("StageScene");
     }

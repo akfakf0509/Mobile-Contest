@@ -1094,7 +1094,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f69467255cc62b43a4a3427a071bedf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stage_count: 0
   Stage1: {fileID: 1757321773}
   Stage2: {fileID: 676154865}
   Stage3: {fileID: 1656791921}
