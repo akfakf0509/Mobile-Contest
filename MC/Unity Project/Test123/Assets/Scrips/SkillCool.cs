@@ -13,28 +13,21 @@ public class SkillCool : MonoBehaviour
 
     private bool isCan = true;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void OnPointerDown(BaseEventData data)
     {
-        if (isCan)
-        {
-            StartCoroutine(CoolTime(this.Skill_Cool));
-        }
-
+        img_Skill.transform.localScale = new Vector3(1, 1, 1);
         /*img_Skill.transform.localScale = new Vector3(1, 1, 1);
         StartCoroutine(waitfor(0.1f));
         img_Skill.transform.localScale = new Vector3(0.8f, 0.8f, 1);*/
+    }
+
+    public void OnPointerUp(BaseEventData data)
+    {
+        img_Skill.transform.localScale = new Vector3(0.8f, 0.8f, 1);
+        if (isCan && Time.timeScale == 1)
+        {
+            StartCoroutine(CoolTime(this.Skill_Cool));
+        }
     }
 
     /*IEnumerator waitfor(float wait)

@@ -6,8 +6,10 @@ using UnityEngine.UI;
 
 public class PanelButton : Counter
 {
+    public Button btn;
     public GameObject PauseWindow;
-    public Text text1;
+
+    private bool isOpen = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +18,7 @@ public class PanelButton : Counter
         //Invoke("appear", 2);
         //PauseWindow.SetActive(false);
 
-        Debug.Log(Counter.Stage_count);
+        //Debug.Log(Counter.Stage_count);
     }
 
     IEnumerator WaitFor(float time)
@@ -24,15 +26,38 @@ public class PanelButton : Counter
         yield return new WaitForSeconds(time);
     }
 
+    public void OnPointerDown()
+    {
+        btn.transform.localScale = new Vector3(1.2f, 1.2f, 1);
+    }
+
+    public void OnPointerUp()
+    {
+        btn.transform.localScale = new Vector3(1, 1, 1);
+    }
+
     public void OpenClick()
     {
-        PauseWindow.SetActive(true);
+        Debug.Log(";lkj");
+        if (isOpen)
+        {
+            PauseWindow.SetActive(false);
+            isOpen = false;
+        }
+        else
+        {
+            PauseWindow.SetActive(true);
+            isOpen = true;
+        }
+        
         Time.timeScale = 0;
     }
 
     public void CloseClick()
     {
         PauseWindow.SetActive(false);
+        isOpen = false;
+        Debug.Log("asdf");
         Time.timeScale = 1;
     }
 

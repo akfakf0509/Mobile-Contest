@@ -36,7 +36,7 @@ public class JoyStick : MonoBehaviour
     void Update()
     {
         Vector3 moveVelocity = new Vector3();
-        if (MoveFlag)
+        if (MoveFlag && Time.timeScale == 1)
         {
             if (JoyVec.x < 0)
             {
@@ -78,8 +78,11 @@ public class JoyStick : MonoBehaviour
         else
             StickPos = StickFirstPos + JoyVec * Radius;
 
-        Stick.position = new Vector2(StickPos.x, StickFirstPos.y);
-
+        if (Time.timeScale == 1)
+        {
+            Stick.position = new Vector2(StickPos.x, StickFirstPos.y);
+        }
+        
         MoveFlag = true;
     }
 
