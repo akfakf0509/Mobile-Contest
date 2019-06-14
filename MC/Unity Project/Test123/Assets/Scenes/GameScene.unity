@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &16218719
 RectTransform:
   m_ObjectHideFlags: 0
@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 164592918}
   - component: {fileID: 164592921}
   - component: {fileID: 164592922}
+  - component: {fileID: 164592923}
   m_Layer: 5
   m_Name: ContinueButton
   m_TagString: Untagged
@@ -361,7 +362,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 492488960}
+        - m_Target: {fileID: 164592923}
           m_MethodName: OnPointerDown
           m_Mode: 1
           m_Arguments:
@@ -378,7 +379,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 492488960}
+        - m_Target: {fileID: 164592923}
           m_MethodName: OnPointerUp
           m_Mode: 1
           m_Arguments:
@@ -391,6 +392,19 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &164592923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164592916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1176cf8c3d82214f9fd892c5698caf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btn: {fileID: 164592918}
 --- !u!1 &199762693
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,6 +1385,7 @@ GameObject:
   - component: {fileID: 541792453}
   - component: {fileID: 541792456}
   - component: {fileID: 541792457}
+  - component: {fileID: 541792458}
   m_Layer: 5
   m_Name: HomeButton
   m_TagString: Untagged
@@ -1521,7 +1536,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 492488960}
+        - m_Target: {fileID: 541792458}
           m_MethodName: OnPointerDown
           m_Mode: 1
           m_Arguments:
@@ -1538,7 +1553,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 492488960}
+        - m_Target: {fileID: 541792458}
           m_MethodName: OnPointerUp
           m_Mode: 1
           m_Arguments:
@@ -1551,6 +1566,19 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &541792458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541792451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1176cf8c3d82214f9fd892c5698caf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btn: {fileID: 541792453}
 --- !u!1 &615364376
 GameObject:
   m_ObjectHideFlags: 0

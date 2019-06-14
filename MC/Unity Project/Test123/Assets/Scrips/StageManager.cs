@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StageManager : Counter
 {
@@ -14,10 +15,10 @@ public class StageManager : Counter
     void Start()
     {
         Counter.Stage_count = 1;
+        Vanish();
     }
 
-
-    void FixedUpdate()
+    void Update()
     {
         switch (Counter.Stage_count)
         {
@@ -34,7 +35,7 @@ public class StageManager : Counter
         }
     }
 
-    void Vanish()
+    private void Vanish()
     {
         Stage1.SetActive(false);
         Stage2.SetActive(false);
