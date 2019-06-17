@@ -6,11 +6,10 @@ using UnityEngine.UI;
 
 public class StageManager : Counter
 {
+    public GameObject Tutorial;
     public GameObject Stage1;
     public GameObject Stage2;
     public GameObject Stage3;
-    public GameObject Stage4;
-    public GameObject Stage5;
 
     void Start()
     {
@@ -23,30 +22,27 @@ public class StageManager : Counter
         switch (Counter.Stage_count)
         {
             case 1:
-                Vanish(); Stage1.SetActive(true); break;
+                Vanish(); Tutorial.SetActive(Tutorial); break;
             case 2:
-                Vanish(); Stage2.SetActive(true); break;
+                Vanish(); Stage1.SetActive(true); break;
             case 3:
-                Vanish(); Stage3.SetActive(true); break;
+                Vanish(); Stage2.SetActive(true); break;
             case 4:
-                Vanish(); Stage4.SetActive(true); break;
-            case 5:
-                Vanish(); Stage5.SetActive(true); break;
+                Vanish(); Stage3.SetActive(true); break;
         }
     }
 
     private void Vanish()
     {
+        Tutorial.SetActive(false);
         Stage1.SetActive(false);
         Stage2.SetActive(false);
         Stage3.SetActive(false);
-        Stage4.SetActive(false);
-        Stage5.SetActive(false);
     }
 
     public void onClick_next()
     {
-        if (Counter.Stage_count < 5)
+        if (Counter.Stage_count < 4)
             Counter.Stage_count++;
     }
 
