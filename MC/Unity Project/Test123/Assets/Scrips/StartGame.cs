@@ -17,12 +17,8 @@ public class StartGame : MonoBehaviour
         //    }
         //}
  //      if (Input.touchCount > 0)
-       if (Input.GetMouseButtonDown(0))
+       if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
             SceneManager.LoadScene("StageScene");
-    }
-    public void onClick()
-    {
-        SceneManager.LoadScene("GameScene");
     }
     /*public void ChangeGameScene()
     {

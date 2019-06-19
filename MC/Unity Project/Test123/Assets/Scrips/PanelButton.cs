@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PanelButton : Blink
 {
-    public GameObject PauseWindow;
+    public GameObject Window;
 
     private bool isOpen = true;
     //void Start()
@@ -19,32 +19,31 @@ public class PanelButton : Blink
     //Debug.Log(Counter.Stage_count);
     //}
 
-    IEnumerator WaitFor(float time)
-    {
-        yield return new WaitForSeconds(time);
-    }
+    //IEnumerator WaitFor(float time)
+    //{
+    //    yield return new WaitForSeconds(time);
+    //}
 
     public void OpenClick()
     {
-        //Debug.Log(";lkj");
         if (isOpen)
         {
-            PauseWindow.SetActive(false);
+            Window.SetActive(false);
             isOpen = false;
             Time.timeScale = 1;
         }
         else
         {
-            PauseWindow.SetActive(true);
+            Window.SetActive(true);
             isOpen = true;
-            Time.timeScale = 0.1f;
+            Time.timeScale = 0;
         }
         
     }
 
     public void CloseClick()
     {
-        PauseWindow.SetActive(false);
+        Window.SetActive(false);
         isOpen = false;
         Time.timeScale = 1;
     }

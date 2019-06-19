@@ -26,7 +26,7 @@ public class Blink : Counter
     public void OnPointerDown()
     {
         if (btn != null)
-            btn.transform.localScale = new Vector3(size.x + 0.2f, size.y + 0.2f, 1);
+            btn.transform.localScale = new Vector3(size.x + 0.1f, size.y + 0.1f, 1);
         if (img != null)
             img.transform.localScale = new Vector3(imgsize.x + 0.1f, imgsize.y + 0.1f, 1);
         if (txt != null)
