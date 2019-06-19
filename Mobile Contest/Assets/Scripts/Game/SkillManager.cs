@@ -6,7 +6,7 @@ public class SkillManager : MonoBehaviour
 {
     public GameObject player_basic;
     
-    public float player_basic_damge = 0.5f;
+    public float player_basic_damge = 0.7f;
     public float player_basic_cooltime = 3;
 
     public bool player_basic_use = true;
