@@ -8,16 +8,15 @@ public class PanelButton : Blink
 {
     public GameObject PauseWindow;
 
-    private bool isOpen = false;
-    
+    private bool isOpen = true;
     //void Start()
     //{
-        //PauseWindow.SetActive(true);
-        //StartCoroutine(WaitFor(2f));
-        //Invoke("appear", 2);
-        //PauseWindow.SetActive(false);
+    //PauseWindow.SetActive(true);
+    //StartCoroutine(WaitFor(2f));
+    //Invoke("appear", 2);
+    //PauseWindow.SetActive(false);
 
-        //Debug.Log(Counter.Stage_count);
+    //Debug.Log(Counter.Stage_count);
     //}
 
     IEnumerator WaitFor(float time)
@@ -38,7 +37,7 @@ public class PanelButton : Blink
         {
             PauseWindow.SetActive(true);
             isOpen = true;
-            Time.timeScale = 0;
+            Time.timeScale = 0.1f;
         }
         
     }

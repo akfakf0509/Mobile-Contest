@@ -78,10 +78,7 @@ public class JoyStick : MonoBehaviour
         else
             StickPos = StickFirstPos + JoyVec * Radius;
 
-        if (Time.timeScale == 1)
-        {
-            Stick.position = new Vector2(StickPos.x, StickFirstPos.y);
-        }
+        Stick.position = new Vector2(StickPos.x, StickFirstPos.y);
         
         MoveFlag = true;
     }
