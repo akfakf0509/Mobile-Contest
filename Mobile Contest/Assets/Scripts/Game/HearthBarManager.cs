@@ -23,7 +23,6 @@ public class HearthBarManager : MonoBehaviour
 
     public void Do_add(float num)
     {
-        Debug.Log("call");
         hearth += num;
     }
 }

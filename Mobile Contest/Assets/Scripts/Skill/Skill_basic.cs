@@ -6,9 +6,12 @@ public class Skill_basic : MonoBehaviour
 {
     public float speed = 30f;
 
+    private float damage;
+
     void Awake()
     {
         Destroy(gameObject, 3f);
+        damage = GameObject.Find("SkillManager").GetComponent<SkillManager>().player_basic_damge;
     }
 
     void Update()
@@ -16,11 +19,12 @@ public class Skill_basic : MonoBehaviour
         transform.Translate(Vector3.up * speed * Time.deltaTime);
     }
 
-    void OnCollisionEnter2D(Collider2D coll)
+    void OnTriggerEnter2D(Collider2D coll)
     {
         if(coll.gameObject.tag == "Enemy")
         {
-            GameObject.Find("HealthBarMangaer").GetComponent<HearthBarManager>().Do_add(GameObject.Find("SkillManager").GetComponent<SkillManager>().player_basic_damge);
+            GameObject.Find("HealthBarManager").GetComponent<HearthBarManager>().Do_add(damage);
+            Destroy(gameObject);
         }
     }
 }
