@@ -3,22 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StageManager : Counter
+public class StageManager : PanelManager
 {
     public GameObject Tutorial;
     public GameObject Stage1;
     public GameObject Stage2;
     public GameObject Stage3;
 
+    public static int Stage_count;
+
     private void Start()
     {
-        Counter.Stage_count = 1;
+        Stage_count = 1;
         Vanish();
     }
 
     private void Update()
     {
-        switch (Counter.Stage_count)
+
+#if UNITY_ANDROID
+        if (Input.getKeyDown(KeyCode.Escape))
+        {
+            OpenClick();
+        }
+#endif
+
+        switch (Stage_count)
         {
             case 1:
                 Vanish(); Tutorial.SetActive(true); break;
@@ -41,14 +51,14 @@ public class StageManager : Counter
 
     public void onClick_next()
     {
-        if (Counter.Stage_count < 4)
-            Counter.Stage_count++;
+        if (Stage_count < 4)
+            Stage_count++;
     }
 
     public void onClick_pre()
     {
-        if (Counter.Stage_count > 1)
-            Counter.Stage_count--;
+        if (Stage_count > 1)
+            Stage_count--;
     }
 
     public void stage_Selected()
