@@ -19,12 +19,22 @@ public class Skill_basic : MonoBehaviour
         transform.Translate(Vector3.up * speed * Time.deltaTime);
     }
 
-    void OnTriggerEnter2D(Collider2D coll)
+    void OnTriggerStay2D(Collider2D coll)
     {
         if(coll.gameObject.tag == "Enemy")
         {
             GameObject.Find("HealthBarManager").GetComponent<HearthBarManager>().Do_add(damage);
             Destroy(gameObject);
         }
+        if(coll.gameObject.tag == "EventSkill")
+        {
+            coll.GetComponent<Skill_ultimate>().Event();
+            Destroy(gameObject);
+        }
+    }
+
+    public void Set_damage(float dam)
+    {
+        damage = dam;
     }
 }

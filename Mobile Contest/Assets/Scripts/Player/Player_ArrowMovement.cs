@@ -27,13 +27,13 @@ public class Player_ArrowMovement : MonoBehaviour
 
         if (rotate_left)
         {
-            angle++;
-            transform.RotateAround(arrow_standard.transform.position, Vector3.forward, 1);
+            angle += 80f * Time.deltaTime;
+            transform.RotateAround(arrow_standard.transform.position, Vector3.forward, 80f * Time.deltaTime);
         }
         else if (!rotate_left)
         {
-            angle--;
-            transform.RotateAround(arrow_standard.transform.position, Vector3.back, 1);
+            angle -= 80f * Time.deltaTime;
+            transform.RotateAround(arrow_standard.transform.position, Vector3.back, 80f * Time.deltaTime);
         }
     }
 }

@@ -32,7 +32,11 @@ public class Player_Controller : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            skillManager.GetComponent<SkillManager>().Use_player_basic(arrow.transform.position, arrow.transform.rotation);
+            skillManager.GetComponent<SkillManager>().Use_player_basic(arrow.transform.position, arrow.transform.rotation, true);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            skillManager.GetComponent<SkillManager>().Use_player_ultimate(arrow.transform.position, arrow.transform.rotation, true);
         }
     }
 
@@ -40,13 +44,13 @@ public class Player_Controller : MonoBehaviour
     {
         animator.SetBool("is_walk", true);
         transform.parent.Translate(Vector3.left * moveSpeed * Time.deltaTime);
-        transform.localScale = new Vector3(1.7f, 1.7f, 1f);
+        transform.localScale = new Vector3(2f, 2f, 1f);
     }
 
     public void Player_moveRight()
     {
         animator.SetBool("is_walk", true);
         transform.parent.Translate(Vector3.right * moveSpeed * Time.deltaTime);
-        transform.localScale = new Vector3(-1.7f, 1.7f, 1f);
+        transform.localScale = new Vector3(-2f, 2f, 1f);
     }
 }

@@ -11,7 +11,7 @@ public class HearthBarManager : MonoBehaviour
 
     void Update()
     {
-        hearth -= 0.01f * Time.deltaTime;
+        hearth -= 0.003f * Time.deltaTime;
 
         target.GetComponent<Image>().fillAmount = hearth;
     }
