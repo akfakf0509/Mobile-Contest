@@ -10,7 +10,7 @@ public class StageManager : Counter
     public GameObject Stage1;
     public GameObject Stage2;
     public GameObject Stage3;
-
+    
     void Start()
     {
         Counter.Stage_count = 1;
@@ -54,6 +54,12 @@ public class StageManager : Counter
 
     public void stage_Selected()
     {
-        SceneManager.LoadScene("GameScene");
+        switch (Stage_count)
+        {
+            case 1: SceneManager.LoadScene("GameScene"); break;
+            case 2: if (isStage1) SceneManager.LoadScene("GameScene"); break;
+            case 3: if (isStage2) SceneManager.LoadScene("GameScene"); break;
+        }
+        
     }
 }
