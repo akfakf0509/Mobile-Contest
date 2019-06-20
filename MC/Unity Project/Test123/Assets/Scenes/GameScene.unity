@@ -347,7 +347,11 @@ MonoBehaviour:
   btn: {fileID: 164592918}
   img: {fileID: 0}
   txt: {fileID: 0}
+  size: {x: 0, y: 0, z: 0}
+  imgsize: {x: 0, y: 0, z: 0}
+  txtsize: {x: 0, y: 0, z: 0}
   Window: {fileID: 16218718}
+  isOpen: 1
 --- !u!114 &164592922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,7 +461,7 @@ SpriteRenderer:
   m_Size: {x: 12.8, y: 7.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &199762695
@@ -577,6 +581,7 @@ MonoBehaviour:
   img_Skill: {fileID: 208273890}
   SkillTxt: {fileID: 330424257}
   Skill_Cool: 0
+  isCan: 1
 --- !u!114 &208273890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -823,6 +828,7 @@ MonoBehaviour:
   img_Skill: {fileID: 289794669}
   SkillTxt: {fileID: 1086856626}
   Skill_Cool: 0
+  isCan: 1
 --- !u!114 &289794669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1239,7 +1245,11 @@ MonoBehaviour:
   btn: {fileID: 492488957}
   img: {fileID: 0}
   txt: {fileID: 0}
+  size: {x: 0, y: 0, z: 0}
+  imgsize: {x: 0, y: 0, z: 0}
+  txtsize: {x: 0, y: 0, z: 0}
   Window: {fileID: 16218718}
+  isOpen: 1
 --- !u!114 &492488961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1594,7 +1604,11 @@ MonoBehaviour:
   btn: {fileID: 541792453}
   img: {fileID: 0}
   txt: {fileID: 0}
+  size: {x: 0, y: 0, z: 0}
+  imgsize: {x: 0, y: 0, z: 0}
+  txtsize: {x: 0, y: 0, z: 0}
   Window: {fileID: 16218718}
+  isOpen: 1
 --- !u!114 &541792457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1707,7 +1721,7 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &615364379
@@ -1952,9 +1966,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f65a11a31359684a89aeb8fc47ebad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   Player: {fileID: 615364376}
   Stick: {fileID: 2087077572}
   speed: 5
+  StickFirstPos: {x: 0, y: 0}
+  JoyVec: {x: 0, y: 0}
+  PlayerVec: {x: 0, y: 0}
+  Radius: 0
+  MoveFlag: 0
 --- !u!1 &1057899324
 GameObject:
   m_ObjectHideFlags: 0
@@ -2168,6 +2188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60f8173d74f0844e8afe02e9983d813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStage1: 0
+  isStage2: 0
 --- !u!4 &1090889887
 Transform:
   m_ObjectHideFlags: 0
@@ -2322,6 +2344,7 @@ MonoBehaviour:
   img_Skill: {fileID: 1789440600}
   SkillTxt: {fileID: 1914263444}
   Skill_Cool: 0
+  isCan: 1
 --- !u!114 &1789440600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2704,7 +2727,11 @@ MonoBehaviour:
   btn: {fileID: 2016563495}
   img: {fileID: 0}
   txt: {fileID: 0}
+  size: {x: 0, y: 0, z: 0}
+  imgsize: {x: 0, y: 0, z: 0}
+  txtsize: {x: 0, y: 0, z: 0}
   Window: {fileID: 0}
+  isOpen: 1
 --- !u!1 &2087077571
 GameObject:
   m_ObjectHideFlags: 0
