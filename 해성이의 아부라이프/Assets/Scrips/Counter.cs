@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Memory : Counter
+public class Counter : MonoBehaviour
 {
+    public static int Stage_count;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);

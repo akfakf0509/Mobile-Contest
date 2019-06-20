@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class StageManager : Counter
 {
@@ -11,18 +10,18 @@ public class StageManager : Counter
     public GameObject Stage2;
     public GameObject Stage3;
 
-    void Start()
+    private void Start()
     {
         Counter.Stage_count = 1;
         Vanish();
     }
 
-    void Update()
+    private void Update()
     {
         switch (Counter.Stage_count)
         {
             case 1:
-                Vanish(); Tutorial.SetActive(Tutorial); break;
+                Vanish(); Tutorial.SetActive(true); break;
             case 2:
                 Vanish(); Stage1.SetActive(true); break;
             case 3:

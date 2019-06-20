@@ -22,9 +22,9 @@ public class Blink : Counter
     public void OnPointerDown()
     {
         if (btn != null)
-            btn.transform.localScale = new Vector3(size.x + 0.1f, size.y + 0.1f, 1);
+            btn.transform.localScale = new Vector3(size.x * 1.05f, size.y * 1.05f, 1);
         if (img != null)
-            img.transform.localScale = new Vector3(imgsize.x + 0.1f, imgsize.y + 0.1f, 1);
+            img.transform.localScale = new Vector3(imgsize.x * 1.05f, imgsize.y * 1.05f, 1);
     }
 
     public void OnPointerUp()
@@ -35,3 +35,4 @@ public class Blink : Counter
             img.transform.localScale = new Vector3(imgsize.x, imgsize.y, 1);
     }
 }
+
