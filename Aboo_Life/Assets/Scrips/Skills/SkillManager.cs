@@ -16,7 +16,7 @@ public class SkillManager : MonoBehaviour
     {
         if (isCan && Time.timeScale == 1)
         {
-            StartCoroutine(CoolTime(this.Skill_Cool));
+            StartCoroutine(CoolTime(Skill_Cool));
         }
     }
 
@@ -26,7 +26,7 @@ public class SkillManager : MonoBehaviour
         while (cool >= 0.0f)
         {
             cool -= Time.deltaTime;
-            img_Skill.fillAmount = (this.Skill_Cool - cool) / this.Skill_Cool;
+            img_Skill.fillAmount = (Skill_Cool - cool) / Skill_Cool;
             SkillTxt.text = "" + Mathf.Round(cool * 10) / 10;
             yield return new WaitForFixedUpdate();
         }
