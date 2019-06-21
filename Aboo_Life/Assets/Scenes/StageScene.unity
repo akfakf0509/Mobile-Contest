@@ -1561,7 +1561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Window: {fileID: 238379423}
   Tutorial: {fileID: 1616470163}
-  Stage1: {fileID: 833224476}
+  Stage1: {fileID: 1150045095}
   Stage2: {fileID: 560042961}
   Stage3: {fileID: 1529741114}
 --- !u!1 &1009496190

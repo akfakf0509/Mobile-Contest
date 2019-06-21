@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill1 : SkillManager
+public class Skill1 : SkillManager1
 {
     void Start()
     {

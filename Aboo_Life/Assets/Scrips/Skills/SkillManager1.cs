@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class SkillManager : MonoBehaviour
+public class SkillManager1 : MonoBehaviour
 {
     public Image img_Skill;
     public Text SkillTxt;

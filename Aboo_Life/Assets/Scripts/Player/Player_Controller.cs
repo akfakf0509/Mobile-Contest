@@ -9,7 +9,7 @@ public class Player_Controller : MonoBehaviour
     GameObject skillManager;
     GameObject arrow;
 
-    public float moveSpeed = 50f;
+    public float moveSpeed = 5f;
 
     void Awake()
     {
@@ -22,14 +22,27 @@ public class Player_Controller : MonoBehaviour
     {
         animator.SetBool("is_walk", false);
 
-        if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > -75)
+        /*if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > -75)
         {
             Player_moveLeft();
         }
         if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < 75)
         {
             Player_moveRight();
+        }*/
+
+        if (transform.position.x > -7f && transform.position.x < 7f)
+        {
+            if (JoyStick.JoyVec.x < 0)
+            {
+                Player_moveLeft();
+            }
+            else if (JoyStick.JoyVec.x > 0)
+            {
+                Player_moveRight();
+            }
         }
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             skillManager.GetComponent<SkillManager>().Use_player_basic(arrow.transform.position, arrow.transform.rotation, true);
@@ -47,14 +60,20 @@ public class Player_Controller : MonoBehaviour
     public void Player_moveLeft()
     {
         animator.SetBool("is_walk", true);
-        transform.parent.Translate(Vector3.left * moveSpeed * Time.deltaTime);
-        transform.localScale = new Vector3(2f, 2f, 1f);
+        /*transform.parent.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+        transform.localScale = new Vector3(2f, 2f, 1f);*/
+        Vector3 moveVelocity = new Vector3();
+        moveVelocity = new Vector3(-1, 1, 1);
+        transform.position += moveVelocity * moveSpeed * Time.deltaTime;
     }
 
     public void Player_moveRight()
     {
         animator.SetBool("is_walk", true);
-        transform.parent.Translate(Vector3.right * moveSpeed * Time.deltaTime);
-        transform.localScale = new Vector3(-2f, 2f, 1f);
+        /*transform.parent.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+        transform.localScale = new Vector3(-2f, 2f, 1f);*/
+        Vector3 moveVelocity = new Vector3();
+        moveVelocity = new Vector3(1, 1, 1);
+        transform.position += moveVelocity * moveSpeed * Time.deltaTime;
     }
 }
