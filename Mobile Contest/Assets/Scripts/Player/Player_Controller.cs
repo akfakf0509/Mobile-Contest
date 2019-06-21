@@ -22,11 +22,11 @@ public class Player_Controller : MonoBehaviour
     {
         animator.SetBool("is_walk", false);
 
-        if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > -60)
+        if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > -75)
         {
             Player_moveLeft();
         }
-        if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < 60)
+        if (Input.GetKey(KeyCode.RightArrow) && transform.position.x < 75)
         {
             Player_moveRight();
         }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_tuto_AI : MonoBehaviour
+public class Enemy_eng_AI : MonoBehaviour
 {
     public GameObject skill_basic;
 
@@ -25,7 +25,7 @@ public class Enemy_tuto_AI : MonoBehaviour
     void Awake()
     {
         animator = GetComponent<Animator>();
-        
+
     }
 
     void Start()
@@ -37,19 +37,19 @@ public class Enemy_tuto_AI : MonoBehaviour
     }
 
     void Update()
-    { 
-        if(stat == STAT.IDLE)
+    {
+        if (stat == STAT.IDLE)
         {
             animator.SetBool("is_walk", false);
             idle_time -= Time.deltaTime;
-            if(idle_time <= 0)
+            if (idle_time <= 0)
             {
                 stat = STAT.MOVE;
                 idle_time = Random.Range(0f, 3f);
                 idle_remain = idle_time;
             }
         }
-        if(stat == STAT.MOVE)
+        if (stat == STAT.MOVE)
         {
             if (target.x < transform.parent.position.x)
             {
@@ -75,7 +75,7 @@ public class Enemy_tuto_AI : MonoBehaviour
             float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
             skill.transform.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
             skill.transform.position = transform.parent.GetChild(1).position;
-            StartCoroutine(Use_basic(Random.Range(3f,5f)));
+            StartCoroutine(Use_basic(Random.Range(3f, 5f)));
             //[출처] 유니티 2d 오브젝트가 마우스 바라보게 하기|작성자 강민이
         }
     }

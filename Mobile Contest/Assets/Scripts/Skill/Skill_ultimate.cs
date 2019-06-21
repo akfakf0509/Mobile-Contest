@@ -23,7 +23,7 @@ public class Skill_ultimate : MonoBehaviour
         }
     }
 
-    public void Event()
+    public void Event(Quaternion quaternion)
     {
         Destroy(gameObject);
 
@@ -34,21 +34,21 @@ public class Skill_ultimate : MonoBehaviour
 
         if (size < 3.5f)
         {
-            skillmanager.GetComponent<SkillManager>().Use_player_basic(arrow.transform.position, arrow.transform.rotation, false);
+            skillmanager.GetComponent<SkillManager>().Use_player_basic(arrow.transform.position, quaternion, false);
         }
         else if (size < 4.5f)
         {
-            skillmanager.GetComponent<SkillManager>().Use_player_basic(arrow.transform.position, Quaternion.Euler(0, 0, arrow.transform.rotation.z), false);
-            skillmanager.GetComponent<SkillManager>().Use_player_basic(arrow.transform.position, Quaternion.Euler(0, 0, arrow.transform.rotation.z + 10), false);
-            skillmanager.GetComponent<SkillManager>().Use_player_basic(arrow.transform.position, Quaternion.Euler(0, 0, arrow.transform.rotation.z - 10), false);
+            skillmanager.GetComponent<SkillManager>().Use_player_basic(arrow.transform.position, Quaternion.Euler(0, 0, quaternion.z * 100), false);
+            skillmanager.GetComponent<SkillManager>().Use_player_basic(arrow.transform.position, Quaternion.Euler(0, 0, quaternion.z * 100 + 10), false);
+            skillmanager.GetComponent<SkillManager>().Use_player_basic(arrow.transform.position, Quaternion.Euler(0, 0, quaternion.z * 100 - 10), false);
         }
         else
         {
-            skillmanager.GetComponent<SkillManager>().Use_player_basic(arrow.transform.position, Quaternion.Euler(0, 0, arrow.transform.rotation.z), false);
-            skillmanager.GetComponent<SkillManager>().Use_player_basic(arrow.transform.position, Quaternion.Euler(0, 0, arrow.transform.rotation.z + 10), false);
-            skillmanager.GetComponent<SkillManager>().Use_player_basic(arrow.transform.position, Quaternion.Euler(0, 0, arrow.transform.rotation.z - 10), false);
-            skillmanager.GetComponent<SkillManager>().Use_player_basic(arrow.transform.position, Quaternion.Euler(0, 0, arrow.transform.rotation.z + 20), false);
-            skillmanager.GetComponent<SkillManager>().Use_player_basic(arrow.transform.position, Quaternion.Euler(0, 0, arrow.transform.rotation.z - 20), false);
+            skillmanager.GetComponent<SkillManager>().Use_player_basic(arrow.transform.position, Quaternion.Euler(0, 0, quaternion.z * 100), false);
+            skillmanager.GetComponent<SkillManager>().Use_player_basic(arrow.transform.position, Quaternion.Euler(0, 0, quaternion.z * 100 + 10), false);
+            skillmanager.GetComponent<SkillManager>().Use_player_basic(arrow.transform.position, Quaternion.Euler(0, 0, quaternion.z * 100 - 10), false);
+            skillmanager.GetComponent<SkillManager>().Use_player_basic(arrow.transform.position, Quaternion.Euler(0, 0, quaternion.z * 100 + 20), false);
+            skillmanager.GetComponent<SkillManager>().Use_player_basic(arrow.transform.position, Quaternion.Euler(0, 0, quaternion.z * 100 - 20), false);
         }
     }
 

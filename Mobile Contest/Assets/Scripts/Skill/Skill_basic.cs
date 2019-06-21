@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Skill_basic : MonoBehaviour
 {
-    public float speed = 30f;
+    public float speed = 70f;
 
     private float damage;
 
@@ -19,16 +19,24 @@ public class Skill_basic : MonoBehaviour
         transform.Translate(Vector3.up * speed * Time.deltaTime);
     }
 
-    void OnTriggerStay2D(Collider2D coll)
+    void OnTriggerEnter2D(Collider2D coll)
     {
         if(coll.gameObject.tag == "Enemy")
         {
             GameObject.Find("HealthBarManager").GetComponent<HearthBarManager>().Do_add(damage);
             Destroy(gameObject);
         }
-        if(coll.gameObject.tag == "EventSkill")
+        if(coll.gameObject.tag == "Player")
         {
-            coll.GetComponent<Skill_ultimate>().Event();
+            GameObject.Find("HealthBarManager").GetComponent<HearthBarManager>().Do_minus(damage);
+            Destroy(gameObject);
+        }
+    }
+    void OnTriggerStay2D(Collider2D coll)
+    {
+        if (coll.gameObject.tag == "EventSkill")
+        {
+            coll.GetComponent<Skill_ultimate>().Event(transform.rotation);
             Destroy(gameObject);
         }
     }
