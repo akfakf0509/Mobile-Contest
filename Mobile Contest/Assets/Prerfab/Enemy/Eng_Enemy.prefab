@@ -225,6 +225,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skill_basic: {fileID: 1633204280329818544, guid: d2f2ec5ee104b7d4c9d3185080191749,
     type: 3}
+  skill_ultimate: {fileID: 7515617587262892979, guid: 5b5b3115026df2b478cfe24d79eccd97,
+    type: 3}
   stat: 0
   idle_time: 0
   moveSpeed: 50

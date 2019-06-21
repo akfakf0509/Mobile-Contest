@@ -846,13 +846,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_basic: {fileID: 236240318241636921, guid: 9f7fdf645ff22ea4b9a7c8fae3cb53f9,
     type: 3}
+  player_shield: {fileID: 5616548233940104212, guid: 12dd889ed3079d94ab2b8bd4238a6b8e,
+    type: 3}
   player_ultimate: {fileID: 3964474619086788688, guid: 4a0ab69393c46f24fa16d13860a2e384,
     type: 3}
   player_basic_damge: 0.04
   player_basic_cooltime: 1.5
   player_ultimate_damge: 0.065
   player_ultimate_cooltime: 20
+  player_shield_cooltime: 12
   player_basic_use: 1
+  player_shield_use: 1
   player_ultimate_use: 1
 --- !u!4 &1976860661
 Transform:
@@ -1159,7 +1163,7 @@ PrefabInstance:
     - target: {fileID: 2818078815689826196, guid: 2d591a7c7edcf5c439d7e105937e2943,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2818078815689826199, guid: 2d591a7c7edcf5c439d7e105937e2943,
         type: 3}
@@ -1230,6 +1234,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mat_Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6286801303503118204, guid: 4536ee13cb9184e41af8135daac0aae7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6286801303503118205, guid: 4536ee13cb9184e41af8135daac0aae7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1285,5 +1294,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6286801305272592066, guid: 4536ee13cb9184e41af8135daac0aae7,
+        type: 3}
+      propertyPath: skill_basic
+      value: 
+      objectReference: {fileID: 1633204280329818544, guid: d2f2ec5ee104b7d4c9d3185080191749,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4536ee13cb9184e41af8135daac0aae7, type: 3}

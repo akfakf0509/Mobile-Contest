@@ -34,6 +34,10 @@ public class Player_Controller : MonoBehaviour
         {
             skillManager.GetComponent<SkillManager>().Use_player_basic(arrow.transform.position, arrow.transform.rotation, true);
         }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            skillManager.GetComponent<SkillManager>().Use_player_shield(new Vector3(transform.parent.position.x, -18), Quaternion.Euler(0, 0, 0), true);
+        }
         if (Input.GetKeyDown(KeyCode.E))
         {
             skillManager.GetComponent<SkillManager>().Use_player_ultimate(arrow.transform.position, arrow.transform.rotation, true);

@@ -5,12 +5,13 @@ using UnityEngine;
 public class Enemy_eng_AI : MonoBehaviour
 {
     public GameObject skill_basic;
+    public GameObject skill_ultimate;
 
     Animator animator;
 
     public enum STAT
     {
-        IDLE, MOVE, SKILL_BASIC
+        IDLE, MOVE, SKILL_BASIC, SKILL_ULTIMATE
     };
 
     public STAT stat = STAT.IDLE;
@@ -34,6 +35,7 @@ public class Enemy_eng_AI : MonoBehaviour
         target = new Vector3(Random.Range(-75, 75), 30);
         idle_remain = idle_time;
         StartCoroutine(Use_basic(Random.Range(3f, 5f)));
+        StartCoroutine(Use_ultimate(Random.Range(20f, 22f)));
     }
 
     void Update()
@@ -78,6 +80,13 @@ public class Enemy_eng_AI : MonoBehaviour
             StartCoroutine(Use_basic(Random.Range(3f, 5f)));
             //[출처] 유니티 2d 오브젝트가 마우스 바라보게 하기|작성자 강민이
         }
+        if(stat == STAT.SKILL_ULTIMATE)
+        {
+            stat = STAT.MOVE;
+            GameObject skill = Instantiate(skill_ultimate);
+            skill.transform.position = new Vector2(Random.Range(-75f, 75), 70);
+            StartCoroutine(Use_ultimate(Random.Range(20f, 22f)));
+        }
     }
 
     public void Tuto_moveLeft()
@@ -98,5 +107,10 @@ public class Enemy_eng_AI : MonoBehaviour
     {
         yield return new WaitForSeconds(cooltime);
         stat = STAT.SKILL_BASIC;
+    }
+    IEnumerator Use_ultimate(float cooltime)
+    {
+        yield return new WaitForSeconds(cooltime);
+        stat = STAT.SKILL_ULTIMATE;
     }
 }

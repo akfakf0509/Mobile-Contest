@@ -2,21 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tuto_Basic : MonoBehaviour
+public class Eng_ultimate : MonoBehaviour
 {
-    public float speed = 70f;
+    public Vector2 target;
 
+    public float arrive_time = 2f;
     private float damage;
 
     void Awake()
     {
-        Destroy(gameObject, 3f);
-        damage = GameObject.Find("SkillManager").GetComponent<SkillManager>().player_basic_damge;
+        damage = GameObject.Find("SkillManager").GetComponent<SkillManager>().player_ultimate_damge * 2;
+        target = new Vector2(Random.Range(-75f, 75f), -70);
     }
 
     void Update()
     {
-        transform.Translate(Vector3.up * speed * Time.deltaTime);
+        float to_move_x = target.x - transform.position.x;
+        float to_move_y = target.y - transform.position.y;
+        if (-2 <= to_move_x && to_move_x <= 2 && -2 <= to_move_y && to_move_y <= 2)
+        {
+            Destroy(gameObject);
+        }
+        transform.Translate(new Vector3(to_move_x / arrive_time * Time.deltaTime, to_move_y / arrive_time * Time.deltaTime));
     }
 
     void OnTriggerEnter2D(Collider2D coll)
@@ -27,6 +34,7 @@ public class Tuto_Basic : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     void OnTriggerStay2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "EventSkill")
@@ -38,10 +46,5 @@ public class Tuto_Basic : MonoBehaviour
             }
             catch { }
         }
-    }
-
-    public void Set_damage(float dam)
-    {
-        damage = dam;
     }
 }

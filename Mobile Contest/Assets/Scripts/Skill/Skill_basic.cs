@@ -36,8 +36,13 @@ public class Skill_basic : MonoBehaviour
     {
         if (coll.gameObject.tag == "EventSkill")
         {
-            coll.GetComponent<Skill_ultimate>().Event(transform.rotation);
-            Destroy(gameObject);
+            try
+            {
+                coll.GetComponent<Skill_ultimate>().Event(transform.rotation);
+                Destroy(gameObject);
+            }
+            catch { }
+            
         }
     }
 
