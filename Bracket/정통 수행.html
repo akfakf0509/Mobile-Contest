@@ -5,8 +5,22 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
     <style>
+        div.text {
+            font-family: 'Nanum Pen Script', cursive;
+            font-size: 35px;
+        }
+        img.school {
+            width: 250px;
+            height: 150px;
+            display: inline-block;
+        }
+        img.game {
+            width: 250px;
+        }
+        img.other {
+            width: 150px;
+        }
         body {
-            margin-top: -27px;
             margin-left: 0;
             padding: 0;
         }
@@ -14,8 +28,7 @@
             color: white;
         }
         div.bg1 {
-            background: linear-gradient(to bottom, white, gray, black);
-            /*background-color: gray;*/
+            background: linear-gradient(to bottom, white, cornflowerblue, black);
             width: 100vw;
             height: 100vh;
         }
@@ -24,10 +37,12 @@
             background-color: black;
             width: 100vw;
             height: 100vh;
+            color: aliceblue;
         }
         div.bg3 {
             margin-top: -27px;
-            background: linear-gradient(to bottom,);
+            margin-bottom: -10px;
+            background: linear-gradient(to bottom, white, gray, rebeccapurple);
             width: 100vw;
             height: 100vh;
         }
@@ -47,53 +62,135 @@
             text-align: center;
         }
         h1 {
-            font-size: 40px;
+            font-family: 'Nanum Pen Script', cursive;
+            font-size: 60px;
+            margin: 0px 20px 20px;
         }
         h3 {
             font-family: 'Nanum Pen Script', cursive;
             font-size: 40px;
-            margin: -20px 0 20px;
+            margin: 10px 20px 20px;
         }
         div ul {
             text-align: center;
+            margin-left: -40px
         }
-        div ul li {
+        div ul.select li {
             display: inline-block;
             text-align: center;
-            width: 70px;
-            background-color:aliceblue;
+            width: 100px;
+            height: auto;
+            background-color:black;
             margin: 0px;
+            font-size: 30px;
+            color: aliceblue;
+            font-family: 'Nanum Pen Script', cursive;
+        }
+        img:hover {
+              background:#000000;
+              opacity:0.5;
+              transition:all .3s linear;
+        }
+        div.img {
+            display: inline-block;
         }
     </style>
 </head>
 <body>
+   
     <div class="bg1">
         <header>
             <div class="title">
-                <h1 class="name">정해성</h1>
+                <h1 class="name" id="name">정해성</h1>
                 <h3>JHS</h3>
-            </div>
+            </div><hr>
         </header>
         <section>
-            <ul>
-                <a href="#firstScene"><li>첫 번째</li></a>
-                <a href="#secondScene"><li>두 번째</li></a>
-                <a href="#thirdScene"><li>세 번째</li></a>
-                <li>네 번째</li>
-                <li>다섯 번째</li>
-            </ul>
+            <ul class="select">
+                <a href="#firstScene"><li>학교</li></a>
+                <a href="#secondScene"><li>동아리</li></a>
+                <a href="#thirdScene"><li>좋아하는 것</li></a>
+                <a href="#fourthScene"><li>장래희망</li></a>
+            </ul><hr>
         </section>
     </div>
+    
     <div class="bg2" id="firstScene">
-        <h1 id="text1">첫 번째 화면</h1>
+        <h1 id="text1">학교</h1><hr>
+        <div class="text">
+            <a href="#name">돌아가기</a><br>
+        <div class="img">
+            <img src="image/Elementary.jpg" class="school" alt="녹번초사진">
+            <div>녹번초등학교</div>
+        </div>
+        <div class="img">
+            <img src="image/Elementary2.jpg" class="school" alt="연은초사진">
+            <div>연은초등학교</div>
+        </div>
+        <div class="img">
+            <img src="image/middle.png" class="school" alt="충암중사진">
+            <div>충암중학교</div>
+        </div>
+        <div class="img">
+            <img src="image/sunrin1.jpg" class="school" alt="선린고사진">
+            <div>선린인터넷고등학교</div>
+        </div>
+        <div class="img">
+            <img src="image/sunrin.jpg" class="school" alt="선린마크">
+            <div>.</div>
+            </div>
+        </div>
     </div>
     
     <div class="bg3" id="secondScene">
-        <h1>두 번째 화면</h1>
+        <h1 id="text2">동아리</h1><hr>
+        <div class="text">
+                <a href="#name">돌아가기</a>
+            <ul>
+                <li>
+                    S.T.E.B.<br>
+                    <img src="image/STEB.png" class="other" alt="STEB">
+                </li>
+                <li>
+                   InterRuze<br>
+                   <img src="image/interruze.png" class="other" alt="InterRuze"> 
+                </li>
+            </ul>
+        </div>
     </div>
     
-    <div id="thirdScene">
-        <h1>세 번째 화면</h1>
+    <div class="bg1" id="thirdScene">
+        <h1 id="text2">좋아하는 것</h1><hr>
+        <div class="text">
+        <a href="#name">돌아가기</a><br>
+            <ul>
+                <li>게임<br>
+                    <img src="image/league.png" class="game" alt="롤">
+                </li>
+                <li>
+                    피아노 (여러가지)<br>
+                    <img src="image/Piano.jpg" class="game" alt="피아노 사진">
+                </li>
+            </ul>
+        </div>
     </div>
+    
+    <div class="bg3" id="fourthScene">
+        <h1 id="text2">장래희망</h1><hr>
+        <div class="text">
+            <a href="#name">돌아가기</a><br>
+            <ul>
+                <li>
+                    게임 개발자 - 프로그래머, 기획자<br><br>
+                    <img src="image/gameprogrammer.jpg" class="game" alt="">
+                </li>
+                <li>
+                    <br>게임 음향 기술자
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    
 </body>
 </html>
